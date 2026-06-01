@@ -62,7 +62,7 @@ async function generateAIJourney() {
 
   try {
 
-    const response = await fetch("http://localhost:3000/api/journey", {
+    const response = await fetch("https://identity-travel.onrender.com/api/journey", {
 
       method: "POST",
 
