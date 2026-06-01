@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Identity Travel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <div class="navbar">
+
+    <div class="logo">
+      Identity Travel
+    </div>
+
+    <div class="nav-links">
+      <a href="#">Experiences</a>
+      <a href="#">Journeys</a>
+      <a href="#">Destinations</a>
+      <a href="#">Community</a>
+    </div>
+
+    <div class="explore-btn">
+      Explore Now
+    </div>
+
+  </div>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        ✨ AI-Powered Identity Exploration
+      </div>
+
+      <h1>
+        Travel Beyond Places.
+        Discover Yourself.
+      </h1>
+
+      <p>
+        Identity Travel transforms emotions into meaningful
+        journeys designed around healing, reflection,
+        confidence, and personal transformation.
+      </p>
+
+      <div class="input-box">
+
+        <textarea
+          id="userInput"
+          placeholder="Describe how you're feeling or who you want to become..."
+        ></textarea>
+
+        <button onclick="generateAIJourney()">
+          Generate AI Journey ✨
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- JOURNEY TYPES -->
+
+  <section class="journey-types">
+
+    <h2 class="section-title">
+      Begin Your Transformation
+    </h2>
+
+    <p class="section-subtitle">
+      Every experience is emotionally designed to help
+      you heal, grow, reflect, and evolve.
+    </p>
+
+    <div class="journey-grid">
+
+      <div class="journey-card" onclick="selectJourney('Healing Reset')">
+
+        <div class="emoji">🌿</div>
+
+        <h3>Healing Reset</h3>
+
+        <p>
+          Emotional reset, mindfulness,
+          deep rest, and inner peace journeys.
+        </p>
+
+      </div>
+
+      <div class="journey-card" onclick="selectJourney('Self Discovery')">
+
+        <div class="emoji">🧠</div>
+
+        <h3>Self Discovery</h3>
+
+        <p>
+          Reflective experiences designed
+          to help you rediscover yourself.
+        </p>
+
+      </div>
+
+      <div class="journey-card" onclick="selectJourney('Confidence Rebuild')">
+
+        <div class="emoji">🔥</div>
+
+        <h3>Confidence Rebuild</h3>
+
+        <p>
+          Adventure-driven journeys focused
+          on courage, confidence, and growth.
+        </p>
+
+      </div>
+
+      <div class="journey-card" onclick="selectJourney('Breakup Recovery')">
+
+        <div class="emoji">💔</div>
+
+        <h3>Breakup Recovery</h3>
+
+        <p>
+          Healing experiences focused
+          on emotional recovery and self-love.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DESTINATIONS -->
+
+  <section class="destinations">
+
+    <h2 class="section-title">
+      AI Recommended Destinations
+    </h2>
+
+    <p class="section-subtitle">
+      Curated destinations aligned with your emotional transformation.
+    </p>
+
+    <div class="destination-grid">
+
+      <div class="destination-card">
+
+        <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="destination-content">
+
+          <span class="tag">Healing</span>
+
+          <h3>Bali, Indonesia</h3>
+
+          <p>
+            Yoga retreats, mindfulness,
+            beaches, emotional healing,
+            and spiritual calm.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="destination-card">
+
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="destination-content">
+
+          <span class="tag">Clarity</span>
+
+          <h3>Himachal, India</h3>
+
+          <p>
+            Mountains, solitude,
+            reflection, and peaceful
+            slow living experiences.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="destination-card">
+
+        <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="destination-content">
+
+          <span class="tag">Reflection</span>
+
+          <h3>Kyoto, Japan</h3>
+
+          <p>
+            Temples, mindfulness,
+            tea rituals, and cultural
+            introspection journeys.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RESULT -->
+
+  <section class="result-section" id="journeySection">
+
+    <div class="journey-container">
+
+      <div class="journey-header">
+
+        <span class="journey-badge">
+          ✨ Your Transformation Journey
+        </span>
+
+        <h2>
+          AI Designed Experience
+        </h2>
+
+        <p>
+          Personalized emotional travel journey crafted for your transformation.
+        </p>
+
+      </div>
+
+      <div id="aiResult">
+        Your AI-generated transformation journey will appear here...
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+    Identity Travel © 2026 • Redefining Travel Through Self Discovery
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
