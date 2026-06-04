@@ -154,9 +154,46 @@ function generatePremiumJourney(archetype, destination, theme, phases) {
         ${archetype}
     </h1>
 
-    <p class="identity-subtitle">
-        ${destination} • ${theme}
+    <p class="identity-story">
+        You have been carrying more than you realize.
+
+        This journey is designed to help you release mental noise,
+        reconnect with yourself, and return with renewed energy.
     </p>
+
+    <div class="identity-details">
+
+        <div class="detail-card">
+
+            <div class="detail-label">
+                📍 DESTINATION
+            </div>
+
+            <h3>${destination}</h3>
+
+            <p>
+                Sacred spaces designed for reflection and renewal.
+            </p>
+
+        </div>
+
+        <div class="detail-card">
+
+            <div class="detail-label">
+                ✨ TRANSFORMATION
+            </div>
+
+            <h3>${theme}</h3>
+
+            <p>
+                The emotional shift this journey is designed to create.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
 
 </div>
 

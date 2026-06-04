@@ -681,3 +681,79 @@ button:hover{
     font-size:20px;
     color:#cfd8e3;
 }
+
+.identity-story{
+
+    max-width:700px;
+
+    margin:30px auto 0;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,0.75);
+
+}
+
+/* ================= IDENTITY DETAILS ================= */
+
+.identity-details{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    margin-top:50px;
+
+    flex-wrap:wrap;
+
+}
+
+.detail-card{
+
+    width:320px;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(20px);
+
+    text-align:left;
+
+}
+
+.detail-label{
+
+    color:#8fa1c4;
+
+    letter-spacing:2px;
+
+    font-size:13px;
+
+    margin-bottom:12px;
+
+}
+
+.detail-card h3{
+
+    font-size:32px;
+
+    margin-bottom:15px;
+
+}
+
+.detail-card p{
+
+    color:rgba(255,255,255,0.7);
+
+    line-height:1.7;
+
+}
