@@ -22,9 +22,10 @@ app.post("/api/journey", async (req, res) => {
 
     console.log("Incoming:", input);
 
-    let mood = "self-discovery";
+    let archetype = "🌿 The Healer";
     let destination = "Bali";
-    let energy = "healing";
+    let theme = "Self Discovery";
+    let journeyType = "healer";
 
     const text = input.toLowerCase();
 
@@ -36,9 +37,10 @@ app.post("/api/journey", async (req, res) => {
       text.includes("exhausted")
     ) {
 
-      mood = "deep rest and healing";
+      archetype = "🌿 The Healer";
       destination = "Bali";
-      energy = "peaceful healing";
+      theme = "Deep Healing";
+      journeyType = "healer";
 
     }
 
@@ -47,9 +49,10 @@ app.post("/api/journey", async (req, res) => {
       text.includes("confused")
     ) {
 
-      mood = "clarity and direction";
-      destination = "Himachal";
-      energy = "reflection";
+      archetype = "🧠 The Thinker";
+      destination = "Bhutan";
+      theme = "Clarity";
+      journeyType = "thinker";
 
     }
 
@@ -58,9 +61,10 @@ app.post("/api/journey", async (req, res) => {
       text.includes("confidence")
     ) {
 
-      mood = "confidence and courage";
+      archetype = "🏔 The Explorer";
       destination = "Iceland";
-      energy = "adventure";
+      theme = "Courage";
+      journeyType = "explorer";
 
     }
 
@@ -69,9 +73,10 @@ app.post("/api/journey", async (req, res) => {
       text.includes("breakup")
     ) {
 
-      mood = "emotional recovery";
+      archetype = "🌿 The Healer";
       destination = "Kyoto";
-      energy = "self-love";
+      theme = "Emotional Recovery";
+      journeyType = "healer";
 
     }
 
@@ -79,59 +84,122 @@ app.post("/api/journey", async (req, res) => {
       text.includes("peace")
     ) {
 
-      mood = "inner calm and grounding";
+      archetype = "🌿 The Healer";
       destination = "Rishikesh";
-      energy = "mindfulness";
+      theme = "Inner Calm";
+      journeyType = "healer";
 
     }
 
-    /* ================= AI-LIKE RESPONSE ================= */
+    
+let phases = [];
+if (journeyType === "healer") {
 
-    const response = `
+phases = [
 
-🌍 Your 5-Day Identity Journey
+{
+title:"Disconnect",
+description:"Release the noise and step away from the digital world."
+},
 
-Theme: ${mood}
+{
+title:"Heal",
+description:"Reconnect with nature and allow your mind to rest."
+},
 
-Recommended Destination:
-${destination}
+{
+title:"Reflect",
+description:"Journal and explore what truly matters."
+},
 
-Energy:
-${energy}
+{
+title:"Restore",
+description:"Build new habits and healthier energy."
+},
 
-Day 1 — Disconnect
-• Digital detox
-• Sunset journaling
-• Reflect on what drains your energy
+{
+title:"Renew",
+description:"Step forward with intention and calm."
+}
 
-Day 2 — Slow Down
-• Nature walk
-• Meditation session
-• Practice mindful breathing
+];
 
-Day 3 — Explore Yourself
-• Visit a cultural/artistic place
-• Write about your ideal future self
-• Try something unfamiliar
+}
 
-Day 4 — Rebuild Identity
-• Solo café reflection
-• Create a new life vision
-• List habits to leave behind
+if (journeyType === "thinker") {
 
-Day 5 — Transformation
-• Sunrise gratitude session
-• Write your “new identity statement”
-• Design your next 30 days intentionally
+phases = [
 
-✨ This journey is not about escaping life.
-It’s about rediscovering who you truly are.
+{
+title:"Silence",
+description:"Create space away from constant stimulation."
+},
 
-`;
+{
+title:"Reflection",
+description:"Observe your thoughts without judgment."
+},
+
+{
+title:"Identity Audit",
+description:"Question what truly defines you."
+},
+
+{
+title:"Purpose Discovery",
+description:"Explore what gives your life meaning."
+},
+
+{
+title:"Future Vision",
+description:"Design your next chapter."
+}
+
+];
+
+}
+
+if (journeyType === "explorer") {
+
+phases = [
+
+{
+title:"Challenge",
+description:"Leave your comfort zone."
+},
+
+{
+title:"Adventure",
+description:"Experience something physically demanding."
+},
+
+{
+title:"Resilience",
+description:"Push through discomfort."
+},
+
+{
+title:"Courage",
+description:"Trust yourself in uncertainty."
+},
+
+{
+title:"Transformation",
+description:"Return stronger than before."
+}
+
+];
+
+}
 
     res.json({
-      result: response
-    });
+
+  archetype,
+  destination,
+  theme,
+  phases
+
+});
 
   } catch (error) {
 
