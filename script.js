@@ -142,6 +142,44 @@ async function generateAIJourney() {
 
 function generatePremiumJourney(archetype, destination, theme, phases) {
 
+  let story = "";
+
+if (archetype.includes("Healer")) {
+
+    story = `
+    You have been carrying more than you realize.
+
+    This journey is designed to help you release mental noise,
+    reconnect with yourself,
+    and return with renewed energy.
+    `;
+
+}
+
+else if (archetype.includes("Thinker")) {
+
+    story = `
+    You are searching for clarity, not answers.
+
+    This journey creates space to reflect,
+    question assumptions,
+    and discover your next direction.
+    `;
+
+}
+
+else if (archetype.includes("Explorer")) {
+
+    story = `
+    Growth is waiting outside your comfort zone.
+
+    This journey is designed to help you embrace uncertainty,
+    build confidence,
+    and uncover strengths you haven't yet met.
+    `;
+
+}
+
     let html = `
     
     <div class="identity-reveal">
@@ -155,11 +193,8 @@ function generatePremiumJourney(archetype, destination, theme, phases) {
     </h1>
 
     <p class="identity-story">
-        You have been carrying more than you realize.
-
-        This journey is designed to help you release mental noise,
-        reconnect with yourself, and return with renewed energy.
-    </p>
+    ${story}
+</p>
 
     <div class="identity-details">
 
