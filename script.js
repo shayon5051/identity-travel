@@ -1,3 +1,31 @@
+const journeyImages = {
+
+  healer: [
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    "https://images.unsplash.com/photo-1494526585095-c41746248156e",
+    "https://images.unsplash.com/photo-1470770841072-f978cf4d019e"
+  ],
+
+  thinker: [
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+    "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
+    "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429",
+    "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    "https://images.unsplash.com/photo-1441974231531-c6227db76b6e"
+  ],
+
+  explorer: [
+    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b",
+    "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429",
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+    "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+    "https://images.unsplash.com/photo-1470770841072-f978cf4d019e"
+  ]
+
+};
+
 function selectJourney(type){
 
   const textarea = document.getElementById("userInput");
@@ -116,32 +144,50 @@ function generatePremiumJourney(archetype, destination, theme, phases) {
 
     let html = `
     
-    <div class="journey-summary">
+    <div class="identity-reveal">
 
-        <div class="summary-badge">
-            ${archetype}
-        </div>
+    <p class="identity-label">
+        YOU ARE BECOMING
+    </p>
 
-        <div class="summary-badge">
-            📍 ${destination}
-        </div>
+    <h1 class="identity-title">
+        ${archetype}
+    </h1>
 
-        <div class="summary-badge">
-            ✨ ${theme}
-        </div>
+    <p class="identity-subtitle">
+        ${destination} • ${theme}
+    </p>
 
-    </div>
+</div>
 
     <div class="timeline">
     `;
 
     phases.forEach((phase, index) => {
 
+      let imageType = "healer";
+
+if (archetype.includes("Thinker")) {
+  imageType = "thinker";
+}
+
+if (archetype.includes("Explorer")) {
+  imageType = "explorer";
+}
+
+const image = journeyImages[imageType][index];
+
         html += `
 
         <div class="timeline-card">
 
-            <div class="timeline-content">
+  <img
+    src="${image}"
+    class="timeline-image"
+    alt="${phase.title}"
+  >
+
+  <div class="timeline-content">
 
                 <div class="day-number">
                     Phase ${index + 1}

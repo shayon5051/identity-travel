@@ -658,3 +658,26 @@ button:hover{
     color:rgba(255,255,255,0.8);
 
 }
+
+/* ================= IDENTITY REVEAL ================= */
+
+.identity-reveal{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.identity-label{
+    letter-spacing:4px;
+    color:#8fa1c4;
+    font-size:14px;
+}
+
+.identity-title{
+    font-size:64px;
+    margin:15px 0;
+}
+
+.identity-subtitle{
+    font-size:20px;
+    color:#cfd8e3;
+}
