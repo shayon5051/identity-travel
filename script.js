@@ -75,6 +75,7 @@ async function generateAIJourney() {
     });
 
     const data = await response.json();
+    console.log("API Response:", data);
     const archetype = data.archetype;
     const destination = data.destination;
     const theme = data.theme;
