@@ -180,6 +180,9 @@ else if (archetype.includes("Explorer")) {
 
 }
 
+console.log("Archetype:", archetype);
+console.log("Story:", story);
+
     let html = `
     
     <div class="identity-reveal">
