@@ -103,16 +103,22 @@ async function generateAIJourney() {
     });
 
     const data = await response.json();
-    console.log("API Response:", data);
-    const archetype = data.archetype;
-    const destination = data.destination;
-    const theme = data.theme;
-    const phases = data.phases;
+
+console.log("DATA:", data);
+
+alert(JSON.stringify(data));
+
+const archetype = data.archetype;
+const destination = data.destination;
+const theme = data.theme;
+const phases = data.phases || [];
+const story = data.story;
 
     result.innerHTML = generatePremiumJourney(
     archetype,
     destination,
     theme,
+    story,
     phases
     );
 
@@ -140,49 +146,9 @@ async function generateAIJourney() {
 
 /* ================= PREMIUM JOURNEY GENERATOR ================= */
 
-function generatePremiumJourney(archetype, destination, theme, phases) {
+function generatePremiumJourney(archetype, destination, theme, story, phases) {
 
-  let story = "";
-
-if (archetype.includes("Healer")) {
-
-    story = `
-    You have been carrying more than you realize.
-
-    This journey is designed to help you release mental noise,
-    reconnect with yourself,
-    and return with renewed energy.
-    `;
-
-}
-
-else if (archetype.includes("Thinker")) {
-
-    story = `
-    You are searching for clarity, not answers.
-
-    This journey creates space to reflect,
-    question assumptions,
-    and discover your next direction.
-    `;
-
-}
-
-else if (archetype.includes("Explorer")) {
-
-    story = `
-    Growth is waiting outside your comfort zone.
-
-    This journey is designed to help you embrace uncertainty,
-    build confidence,
-    and uncover strengths you haven't yet met.
-    `;
-
-}
-
-console.log("Archetype:", archetype);
-console.log("Story:", story);
-
+ 
     let html = `
     
     <div class="identity-reveal">
